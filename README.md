@@ -1,4 +1,4 @@
-# dcloud
+# dcloud-client
 
 ## Project setup
 ```
