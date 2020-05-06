@@ -6,26 +6,26 @@
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="./assets/DCloudTransparent.png"
+          src="../assets/DCloudTransparent.png"
           transition="scale-transition"
           width="40"
         />
       </div>
     </v-app-bar>
     <v-content>
-      <HelloWorld/>
+      <LogoSVG/>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import LogoSVG from './LogoSVG';
 
 export default {
   name: 'DCloud',
 
   components: {
-    HelloWorld,
+    LogoSVG,
   },
 
   data: () => ({
