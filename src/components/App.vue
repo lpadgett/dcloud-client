@@ -1,19 +1,12 @@
 <template>
   <v-app>
-    <v-app-bar app="false" color="primary" dark>
+    <v-app-bar app="false" color="primary" dark> <!-- Turn app bar into component --->
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="../assets/DCloudTransparent.png"
-          transition="scale-transition"
-          width="40"
-        />
+        <LogoSVG height=90 />
       </div>
     </v-app-bar>
     <v-content>
-      <LogoSVG/>
+      <ContentStuff/>
     </v-content>
   </v-app>
 </template>
