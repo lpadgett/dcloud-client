@@ -1,7 +1,17 @@
 <template>
-    <div align="left">
+    <div v-if="color === 'black'">
         <v-img
-          :src="require('../assets/DCloudLogo.svg')"
+          :src="require('../assets/DCloudLogoBlack.svg')"
+          class="shrink mr-2"
+          transition="scale-transition"
+          contain
+          :height="height"
+          :width="width"
+        />
+    </div>
+    <div v-else>
+        <v-img
+          :src="require('../assets/DCloudLogoWhite.svg')"
           class="shrink mr-2"
           transition="scale-transition"
           contain
@@ -14,6 +24,6 @@
 <script>
   export default {
     name: 'LogoSVG',
-    props: ['height', 'width']
+    props: ['height', 'width', 'color']
   }
 </script>

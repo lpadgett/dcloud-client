@@ -3,7 +3,7 @@
       <div>
         <v-app-bar app="false" color="primary"> <!-- Turn app bar into component --->
           <div id="logo" class="pa-2">
-            <LogoSVG height=90 width="90"/>
+            <LogoSVG height=90 width="90" color="white"/>
           </div>
 
           <div id="pageTitle">
@@ -12,12 +12,12 @@
 
           <v-spacer/>
 
-          <div id="appbarButton1" class="pa-1">
-            <v-btn color="secondary" depressed >Sign In To DCloud</v-btn>
+          <div id="appbarButton1" class="pa-3">
+            <v-btn color="secondary" depressed>Sign In To DCloud</v-btn>
           </div>
 
-          <div id="appbarButton2" class="pa-5">
-            <v-btn color="secondary" depressed fab></v-btn>
+          <div id="appbarButton2" class="pa-1">
+            <v-btn color="secondary" depressed>Register For DCloud</v-btn>
           </div>
         </v-app-bar>
       </div>
