@@ -1,13 +1,11 @@
 <template>
   <v-app>
     <div>
-    <v-app-bar app="false" color="primary" dark> <!-- Turn app bar into component --->
-      <div id="appbarLogo">
+    <v-app-bar app="false" color="primary"> <!-- Turn app bar into component --->
         <LogoSVG height=90 width="90"/>
-      </div>
       <v-spacer/>
       <div id="appbarButtons">
-        <v-btn></v-btn>
+        <v-btn color=""></v-btn>
       </div>
     </v-app-bar>
       </div>
