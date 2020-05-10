@@ -3,20 +3,21 @@
         <v-row align="center" justify="center">
             <div id="logo" align="center">
                 <LogoSVG height=300 width="300" color="black"/>
-                <h1>DCloud: The Decentralized, Distributed, Zero-Knowledge Cloud Computing Platform</h1>
+                <h1>DCloud: Decentralized, Distributed, Zero-Knowledge Cloud Storage</h1>
             </div>
         </v-row>
         <v-row align="center" justify="center">
             <div id="mainText" align="center" justify="center">
-                <h1>What makes us special?</h1>
-                <h3>We are a decentralized platform and have no physical infrastructure, so we have no single point of failure.</h3>
+                <h1>What makes us special?</h1> <!-- Condense all this text later into little dropdown boxes-->
+                <h3>Our storage is decentralized and distributed across the earth. No single person or company in any single country owns or operates the servers on which your files are stored.</h3>
+                <h3>Client-side encryption! You'd think this would be an industry-standard practice, yet even Google Drive doesn't do this.</h3>
                 <h3>All encryption on DCloud is zero-knowledge, 100% of the time.</h3>
-            </div>
-        </v-row>
-        <v-row align="center" justify="center">
-            <div id="privacyAndterms" align="center" justify="center">
-                <h2>No privacy policies or terms of service that take hours to read and entire legal teams to understand.</h2>
-                <h3>Why? Because we don't need them! We don't collect any data on you and can't tell how you use our services unless you tell us yourselves. All we can do is make sure our services are operational for those who want to usee them.</h3>
+                <h3>We provide a discount to those who pay with cryptocurrency (yes, Monero and ZCash are payment options)!</h3>
+                <h3>Our standard username/password authentication system is trustless!</h3>
+                <h3>We also offer the ability to sign in with your Trezor cryptocurrency wallet!</h3>
+                <h3>Data collection? Data mining? Nonexistent!</h3>
+                <h3>Getting worried because you haven't seen end-to-end encryption yet? Don't worry, we do that too (on top of client-side encryption)!</h3>
+                <h3>Last but not least: we are completely open-source (:</h3>
             </div>
         </v-row>
     </v-container>
