@@ -10,13 +10,12 @@
             <div id="mainText" align="center" justify="center">
                 <h1>What makes us special?</h1> <!-- Condense all this text later into little dropdown boxes-->
                 <h3>Our storage is decentralized and distributed across the earth. No single person or company in any single country owns or operates the servers on which your files are stored.</h3>
-                <h3>Client-side encryption! You'd think this would be an industry-standard practice, yet even Google Drive doesn't do this.</h3>
-                <h3>All encryption on DCloud is zero-knowledge, 100% of the time.</h3>
                 <h3>We provide a discount to those who pay with cryptocurrency (yes, Monero and ZCash are payment options)!</h3>
+                <h3>You can sign in with your Trezor cryptocurrency wallet (no username/password needed)!</h3>
                 <h3>Our standard username/password authentication system is trustless!</h3>
-                <h3>We also offer the ability to sign in with your Trezor cryptocurrency wallet!</h3>
+                <h3>End-to-End AND Client-side encryption! Not even Google Drive does that!</h3>
+                <h3>All encryption on DCloud is zero-knowledge, 100% of the time.</h3>
                 <h3>Data collection? Data mining? Nonexistent!</h3>
-                <h3>Getting worried because you haven't seen end-to-end encryption yet? Don't worry, we do that too (on top of client-side encryption)!</h3>
                 <h3>Last but not least: we are completely open-source (:</h3>
             </div>
         </v-row>

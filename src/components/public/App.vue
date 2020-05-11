@@ -4,20 +4,18 @@
         <PublicAppbar></PublicAppbar>
       </div>
     <v-content>
-      <Home/>
+        <router-view></router-view>
     </v-content>
   </v-app>
 </template>
 
 <script>
-import Home from './Home';
 import PublicAppbar from "./PublicAppbar";
 
 export default {
   name: 'DCloud',
 
   components: {
-    Home,
     PublicAppbar
   },
 

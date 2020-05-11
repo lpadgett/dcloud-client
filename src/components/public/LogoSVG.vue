@@ -1,7 +1,7 @@
 <template>
     <div v-if="color === 'black'">
         <v-img
-          :src="require('../assets/DCloudLogoBlack.svg')"
+          :src="require('../../assets/DCloudLogoBlack.svg')"
           class="shrink mr-2"
           transition="scale-transition"
           contain
@@ -11,7 +11,7 @@
     </div>
     <div v-else>
         <v-img
-          :src="require('../assets/DCloudLogoWhite.svg')"
+          :src="require('../../assets/DCloudLogoWhite.svg')"
           class="shrink mr-2"
           transition="scale-transition"
           contain
