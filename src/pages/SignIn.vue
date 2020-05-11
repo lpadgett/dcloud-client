@@ -5,7 +5,40 @@
                 <v-card class="elevation-12">
                     <v-toolbar color="primary" dark flat>
                         <v-toolbar-title>Sign In To DCloud</v-toolbar-title>
+                        <v-spacer></v-spacer>
+                        <v-tooltip bottom>
+                        <template v-slot:activator="{ on }">
+                            <v-btn
+                                    :href="source"
+                                    icon
+                                    large
+                                    target="_blank"
+                                    v-on="on"
+                            >
+                                <v-icon>mdi-code-tags</v-icon>
+                            </v-btn>
+                        </template>
+                        <span>insert link in this place</span>
+                        </v-tooltip>
                     </v-toolbar>
+                    <v-card-text>
+                        <v-form>
+                            <v-text-field
+                                label="Login"
+                                name="login"
+                                prepend-icon="person"
+                                type="text"
+                            ></v-text-field>
+
+                            <v-text-field
+                                id="password"
+                                label="Password"
+                                name="password"
+                                prepend-icon="lock"
+                                type="password"
+                            ></v-text-field>
+                        </v-form>
+                    </v-card-text>
                 </v-card>
             </v-col>
         </v-row>
