@@ -39,6 +39,11 @@
                             ></v-text-field>
                         </v-form>
                     </v-card-text>
+                    <v-card-actions>
+                        <v-btn color="primary" @click="historyExists() ? $router.go(-1) : $router.push('/')">Back</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn color="primary">Login</v-btn>
+                    </v-card-actions>
                 </v-card>
             </v-col>
         </v-row>
@@ -46,5 +51,15 @@
 </template>
 
 <script>
+    export default {
+        methods: {
+            historyExists () {
+                return window.history?.length > 2
+            },
 
+        },
+        props: {
+            source: String,
+        },
+    }
 </script>
