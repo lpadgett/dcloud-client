@@ -11,7 +11,7 @@
         <v-spacer/>
 
         <div id="appbarButton1" class="pa-3">
-            <v-btn color="secondary" depressed>Sign In To DCloud</v-btn>
+            <v-btn color="secondary" depressed to="/signin">Sign In To DCloud</v-btn>
         </div>
 
         <div id="appbarButton2" class="pa-1">

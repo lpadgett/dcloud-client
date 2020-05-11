@@ -13,7 +13,6 @@
 import PublicAppbar from "./PublicAppbar";
 
 export default {
-  name: 'DCloud',
 
   components: {
     PublicAppbar

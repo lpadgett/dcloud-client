@@ -27,6 +27,8 @@
 
     export default {
 
+        name: 'DCloud',
+
         components: {
             LogoSVG
         },
