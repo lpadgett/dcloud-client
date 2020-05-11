@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import LogoSVG from './LogoSVG';
+    import LogoSVG from '../components/public/LogoSVG';
 
     export default {
 

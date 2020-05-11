@@ -2,16 +2,9 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import App from './components/public/App.vue';
 import vuetify from './plugins/vuetify';
-import VueRouter from 'vue-router';
-import routes from './router/router.js';
+import router from './router'
 
 Vue.use(vuetify);
-
-const router = new VueRouter({
-  routes
-});
-
-Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
