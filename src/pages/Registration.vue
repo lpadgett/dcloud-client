@@ -11,8 +11,8 @@
                     <v-card-text>
                         <v-form>
                             <v-text-field
-                                label="Login"
-                                name="login"
+                                label="Username"
+                                name="username"
                                 prepend-icon="mdi-account"
                                 type="text"
                             ></v-text-field>
@@ -29,7 +29,7 @@
                     <v-card-actions>
                         <v-btn color="primary" @click="historyExists() ? $router.go(-1) : $router.push('/')">Back</v-btn>
                         <v-spacer></v-spacer>
-                        <v-btn color="primary">Login</v-btn>
+                        <v-btn color="primary">Register</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-col>

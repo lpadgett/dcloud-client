@@ -23,7 +23,7 @@ const routes = [
     {
         path: '/home',
         name: 'Home',
-        component: () => import('../pages/UserHome.vue')
+        component: () => import('../pages/UserDashboard.vue')
     }
 ];
 

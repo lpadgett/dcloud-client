@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app="false" color="primary">
+    <v-app-bar app="false" color="primary" flat>
         <div id="logo" class="pa-2">
             <LogoSVG height=90 width="90" color="white"/>
         </div>
