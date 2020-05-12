@@ -29,7 +29,7 @@
                     <v-card-actions>
                         <v-btn color="primary" @click="historyExists() ? $router.go(-1) : $router.push('/')">Back</v-btn>
                         <v-spacer></v-spacer>
-                        <v-btn color="primary">Login</v-btn>
+                        <v-btn color="primary" to="/home">Login</v-btn> <!-- Just sign in without auth as temporary way to facilitate UI building. Add actual auth later -->
                     </v-card-actions>
                 </v-card>
             </v-col>

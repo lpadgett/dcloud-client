@@ -6,8 +6,8 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: () => import('../pages/PublicHome.vue')
+        name: 'DCloud',
+        component: () => import('../pages/FrontPage.vue')
     },
     {
         path: '/signin',
@@ -18,6 +18,12 @@ const routes = [
         path: '/register',
         name: 'Register',
         component: () => import('../pages/Registration.vue')
+    }
+    ,
+    {
+        path: '/home',
+        name: 'Home',
+        component: () => import('../pages/UserHome.vue')
     }
 ];
 
