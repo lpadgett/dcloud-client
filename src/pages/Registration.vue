@@ -5,7 +5,7 @@
                 <v-card class="elevation-12">
                     <v-toolbar color="primary" dark flat>
                         <v-spacer></v-spacer>
-                        <v-toolbar-title>Sign In To DCloud</v-toolbar-title>
+                        <v-toolbar-title>Register For DCloud</v-toolbar-title>
                         <v-spacer></v-spacer>
                     </v-toolbar>
                     <v-card-text>

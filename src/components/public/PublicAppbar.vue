@@ -15,7 +15,7 @@
         </div>
 
         <div id="registrationButton" class="pa-1">
-            <v-btn color="secondary" depressed>Register For DCloud</v-btn>
+            <v-btn color="secondary" depressed to="/register">Register For DCloud</v-btn>
         </div>
     </v-app-bar>
 </template>
