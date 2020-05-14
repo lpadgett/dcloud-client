@@ -4,16 +4,18 @@
         <NavigationDrawer/>
     </v-col>
     <v-col>
-        <p>joe mama</p>
+        <FilesList/>
     </v-col>
 </v-row>
 </template>
 
 <script>
 import NavigationDrawer from "../components/userFacing/NavigationDrawer";
+import FilesList from "../components/userFacing/FilesList";
 export default {
     components: {
         NavigationDrawer,
+        FilesList
     }
 }
 </script>
