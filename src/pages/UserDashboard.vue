@@ -1,14 +1,14 @@
 <template>
 <v-row no-gutters class="fill-height">
     <v-col>
-        <v-navigation-drawer permanent justify="start" align="stretch">
+        <v-navigation-drawer permanent justify="start" align="stretch" width="300">
                 <v-list-item>
                     <v-list-item-content>
                         <v-list-item-title class="title">
                             My DCloud
                         </v-list-item-title>
                         <v-list-item-subtitle>
-                            Welcome, [insert username here]!
+                            Welcome, {{ username }}!
                         </v-list-item-subtitle>
                     </v-list-item-content>
                 </v-list-item>
@@ -39,9 +39,11 @@
 export default {
     data () {
         return {
+            username: '[insert username here]',
             items: [
-                { title: 'My DCloud', icon: 'mdi-view-dashboard' },
-                { title: 'Trash', icon: 'mdi-image' }
+                { title: 'My DCloud', icon: 'mdi-cloud' },
+                { title: 'Favorites', icon: 'mdi-heart' },
+                { title: 'Trash', icon: 'mdi-delete' }
             ],
             right: null,
         }
