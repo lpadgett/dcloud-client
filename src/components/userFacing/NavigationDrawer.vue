@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer permanent justify="start" align="stretch" width="300">
+    <v-navigation-drawer permanent justify="start" align="stretch" width="100%">
         <v-list-item>
             <v-list-item-content>
                 <v-list-item-title class="title">
