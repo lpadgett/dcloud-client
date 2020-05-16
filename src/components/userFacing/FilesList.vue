@@ -3,9 +3,28 @@
         <v-list-item>
             <v-list-item-content>
                 <v-list-item-title class="title">
-                    <h4>My Files</h4>
+                    My Files
                 </v-list-item-title>
+                <v-list-item-subtitle>
+                    Name
+                </v-list-item-subtitle>
             </v-list-item-content>
+            <v-col>
+                <v-list-item-title class="title">
+                    <br/>
+                </v-list-item-title>
+                <v-list-item-subtitle>
+                    Size
+                </v-list-item-subtitle>
+            </v-col>
+            <v-col>
+                <v-list-item-title class="title">
+                    <br/>
+                </v-list-item-title>
+                <v-list-item-subtitle>
+                    Date Uploaded
+                </v-list-item-subtitle>
+            </v-col>
         </v-list-item>
         <v-list-item
                 v-for="folder in folders"
