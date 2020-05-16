@@ -27,7 +27,7 @@
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn color="primary" @click="historyExists() ? $router.go(-1) : $router.push('/')">Back</v-btn>
+                        <v-btn color="primary" to="/">Back</v-btn>
                         <v-spacer></v-spacer>
                         <v-btn color="primary">Register</v-btn>
                     </v-card-actions>

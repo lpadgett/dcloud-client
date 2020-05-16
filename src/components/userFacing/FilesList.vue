@@ -1,14 +1,30 @@
 <template>
     <v-list>
+        <v-list-item>
+            <v-list-item-content>
+                <v-list-item-title class="title">
+                    <h4>My Files</h4>
+                </v-list-item-title>
+            </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+                v-for="folder in folders"
+                :key="folder.name"
+                link
+        >
+            <v-list-item-icon>
+                <v-icon>{{ 'mdi-folder' }}</v-icon>
+            </v-list-item-icon>
+        </v-list-item>
         <v-list-item
                 v-for="file in files"
                 :key="file.name"
                 link
         >
             <v-list-item-icon>
-                <v-icon v-if="file.type === 'directory'">{{ 'mdi-folder' }}</v-icon>
-                <v-icon v-else-if="file.type === 'archive'">{{ 'mdi-zip-box' }}</v-icon>
-                <v-icon v-else>{{ 'mdi-file' }}</v-icon>
+                <v-icon v-if="file.type === 'picture'">{{ 'mdi-image' }}</v-icon>
+                <v-icon v-else-if="file.type === 'archive'"> {{ 'mdi-zip-box' }}</v-icon>
+                <v-icon v-else> {{ 'mdi-file' }}</v-icon>
             </v-list-item-icon>
         </v-list-item>
     </v-list>
@@ -18,11 +34,14 @@
 export default {
     data () {
         return {
+            folders: [
+                {name: 'testFolder1', type: 'folder', size: '-', lastModified: 'date'},
+                {name: 'testFolder2', type: 'folder', size: '-', lastModified: 'date'},
+            ],
             files: [
-                {name: 'test1', type: 'file', size: '_kb', lastModified: 'date'},
-                {name: 'test2', type: 'directory', size: '_kb', lastModified: 'date'},
-                {name: 'test3', type: 'file', size: '_kb', lastModified: 'date'},
-                {name: 'test3', type: 'archive', size: '_kb', lastModified: 'date'}
+                {name: 'test1', type: 'picture', size: '_kb', lastModified: 'date'},
+                {name: 'test3', type: 'other', size: '_kb', lastModified: 'date'},
+                {name: 'test3', type: 'archive', size: '_kb', lastModified: 'date'},
             ],
         }
     }
