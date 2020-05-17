@@ -22,7 +22,7 @@
                     <br/>
                 </v-list-item-title>
                 <v-list-item-subtitle>
-                    Date Uploaded
+                    Last Modified
                 </v-list-item-subtitle>
             </v-col>
         </v-list-item>
@@ -34,6 +34,15 @@
             <v-list-item-icon>
                 <v-icon>{{ 'mdi-folder' }}</v-icon>
             </v-list-item-icon>
+            <v-list-item-content>
+                {{ folder.name }}
+            </v-list-item-content>
+            <v-list-item-content>
+                -
+            </v-list-item-content>
+            <v-list-item-content>
+                {{ folder.lastModified }}
+            </v-list-item-content>
         </v-list-item>
         <v-list-item
                 v-for="file in files"
@@ -45,6 +54,15 @@
                 <v-icon v-else-if="file.type === 'archive'"> {{ 'mdi-zip-box' }}</v-icon>
                 <v-icon v-else> {{ 'mdi-file' }}</v-icon>
             </v-list-item-icon>
+            <v-list-item-content>
+                {{ file.name}}
+            </v-list-item-content>
+            <v-list-item-content>
+                {{ file.size}}
+            </v-list-item-content>
+            <v-list-item-content>
+                {{ file.lastModified }}
+            </v-list-item-content>
         </v-list-item>
     </v-list>
 </template>
