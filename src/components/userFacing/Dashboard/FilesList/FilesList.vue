@@ -1,31 +1,6 @@
 <template>
     <v-list>
-        <v-list-item>
-            <v-list-item-content>
-                <v-list-item-title class="title">
-                    My Files
-                </v-list-item-title>
-                <v-list-item-subtitle>
-                    Name
-                </v-list-item-subtitle>
-            </v-list-item-content>
-            <v-list-item-content>
-                <v-list-item-title class="title">
-                    <br/>
-                </v-list-item-title>
-                <v-list-item-subtitle>
-                    Size
-                </v-list-item-subtitle>
-            </v-list-item-content>
-            <v-list-item-content>
-                <v-list-item-title class="title">
-                    <br/>
-                </v-list-item-title>
-                <v-list-item-subtitle>
-                    Last Modified
-                </v-list-item-subtitle>
-            </v-list-item-content>
-        </v-list-item>
+        <TitleItem/>
         <File :files="folders"/>
         <File :files="files"/>
     </v-list>
@@ -33,9 +8,10 @@
 
 <script>
 import File from "./File";
+import TitleItem from "./TitleItem";
 
 export default {
-    components: {File},
+    components: {TitleItem, File},
     data () {
         return {
             folders: [
