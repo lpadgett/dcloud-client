@@ -4,7 +4,7 @@
                 v-for="file in files"
                 :key="file.name"
                 link
-        >
+        ><!--v-on:dblclick=""-->
             <v-list-item-icon>
                 <v-icon v-if="file.type === 'picture'">{{ 'mdi-image' }}</v-icon>
                 <v-icon v-else-if="file.type === 'archive'"> {{ 'mdi-zip-box' }}</v-icon>
@@ -26,12 +26,15 @@
 
 <script>
     export default {
+        name: "File",
         props: {
             files: {
                 type: Array,
                 required: true,
-            }
+            },
         },
-        name: "File"
+        methods: {
+
+        },
     }
 </script>

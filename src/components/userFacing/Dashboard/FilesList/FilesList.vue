@@ -1,8 +1,13 @@
 <template>
     <v-list>
         <TitleItem/>
-        <File :files="folders"/>
-        <File :files="files"/>
+        <v-list-item-group
+                color="secondary"
+                max="1"
+        >
+            <File :files="folders"/>
+            <File :files="files"/>
+        </v-list-item-group>
     </v-list>
 </template>
 

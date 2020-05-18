@@ -16,6 +16,7 @@
                 <h3>End-to-End AND Client-side encryption! Not even Google Drive does that!</h3>
                 <h3>All encryption on DCloud is zero-knowledge, 100% of the time.</h3>
                 <h3>Data collection? Data mining? Nonexistent!</h3>
+                <h3>No Amazon, Microsoft, or Google Infrastructure!</h3>
                 <h3>Last but not least: we are completely open-source (:</h3>
             </div>
         </v-row>
