@@ -1,22 +1,26 @@
 <template>
-    <v-list>
-        <TitleItem/>
-        <v-list-item-group
-                color="secondary"
-                max="1"
-        >
-            <File :files="folders"/>
-            <File :files="files"/>
-        </v-list-item-group>
-    </v-list>
+    <div>
+        <TitleAndOptionButtons/>
+        <v-list>
+            <LabelItem/>
+            <v-list-item-group
+                    color="secondary"
+                    max="1"
+            >
+                <File :files="folders"/>
+                <File :files="files"/>
+            </v-list-item-group>
+        </v-list>
+    </div>
 </template>
 
 <script>
 import File from "./File";
-import TitleItem from "./TitleItem";
+import TitleAndOptionButtons from "./TitleAndOptionButtons";
+import LabelItem from "./LabelItem";
 
 export default {
-    components: {TitleItem, File},
+    components: {TitleAndOptionButtons, LabelItem, File},
     data () {
         return {
             folders: [

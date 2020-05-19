@@ -4,7 +4,10 @@
                 v-for="file in files"
                 :key="file.name"
                 link
-        ><!--v-on:dblclick=""-->
+        >
+            <!--state changes for click belong in list item-->
+            <!--v-on:click=""-->
+            <!--v-on:dblclick=""-->
             <v-list-item-icon>
                 <v-icon v-if="file.type === 'picture'">{{ 'mdi-image' }}</v-icon>
                 <v-icon v-else-if="file.type === 'archive'"> {{ 'mdi-zip-box' }}</v-icon>
