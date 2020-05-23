@@ -1,8 +1,10 @@
 <template>
     <div>
-        <TitleAndOptionButtons/>
+        <Title/>
+        <v-divider/>
         <v-list>
             <LabelItem/>
+            <v-divider/>
             <v-list-item-group
                     color="secondary"
                     max="1"
@@ -16,11 +18,15 @@
 
 <script>
 import File from "./File";
-import TitleAndOptionButtons from "./TitleAndOptionButtons";
-import LabelItem from "./LabelItem";
+import Title from "../Labels/Title";
+import LabelItem from "../Labels/LabelItem";
 
 export default {
-    components: {TitleAndOptionButtons, LabelItem, File},
+    components: {
+        Title,
+        LabelItem,
+        File
+    },
     data () {
         return {
             folders: [

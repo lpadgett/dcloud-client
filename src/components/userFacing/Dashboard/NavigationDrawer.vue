@@ -10,7 +10,7 @@
                 </v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
-        <v-divider></v-divider>
+        <v-divider/>
         <v-list dense nav align="stretch">
             <v-list-item
                     v-for="item in items"

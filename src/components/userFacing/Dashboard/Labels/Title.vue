@@ -3,16 +3,18 @@
         <v-list-item-content>
             <v-list-item-title id="MyFiles">My Files</v-list-item-title>
         </v-list-item-content>
-        <v-btn text>button1</v-btn>
-        <v-btn text>button2</v-btn>
-        <v-btn text>button3</v-btn>
-        <v-btn text>button4</v-btn>
+        <OptionButtons/>
     </v-list-item>
 </template>
 
 <script>
+import OptionButtons from '../Labels/OptionButtons.vue';
+
     export default {
-        name: "TitleItem"
+        name: "TitleItem",
+        components: {
+            OptionButtons
+        },
     }
 </script>
 
