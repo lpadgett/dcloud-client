@@ -27,6 +27,13 @@ export default {
         LabelItem,
         File
     },
+    methods: {
+        clickFile: function(file) {
+            if(file.type !== 'folder') {
+                window.open(file.source, "_blank");
+            }
+        }
+    },
     data () {
         return {
             folders: [
