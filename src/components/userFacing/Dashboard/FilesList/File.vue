@@ -4,6 +4,7 @@
                 v-for="file in files"
                 :key="file.name"
                 link
+                v-on:click="showPreview(file.source)"
         >
             <!--state changes for click belong in list item-->
             <!--v-on:click=""-->
@@ -37,7 +38,9 @@
             },
         },
         methods: {
-
+            showPreview: function(sourceLink) {
+                window.open(sourceLink, "_blank");
+            }
         },
     }
 </script>
