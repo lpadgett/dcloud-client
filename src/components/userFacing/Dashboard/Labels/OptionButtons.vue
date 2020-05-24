@@ -2,13 +2,44 @@
     <div>
         <v-tooltip bottom>
             <template v-slot:activator="{ on }">
-                <v-btn text v-on="on">button1</v-btn>
+                <v-btn icon v-on="on">
+                    <v-icon>
+                        {{ 'mdi-heart' }}
+                    </v-icon>
+                </v-btn>
             </template>
-            <span>Tooltip</span>
+            <span>Add To Favorites</span>
         </v-tooltip>
-        <v-btn text>button2</v-btn>
-        <v-btn text>button3</v-btn>
-        <v-btn text>button4</v-btn>
+        <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on">
+                    <v-icon>
+                        {{ 'mdi-pencil' }}
+                    </v-icon>
+                </v-btn>
+            </template>
+            <span>Edit</span>
+        </v-tooltip>
+        <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on">
+                    <v-icon>
+                        {{ 'mdi-eye' }}
+                    </v-icon>
+                </v-btn>
+            </template>
+            <span>Preview File</span>
+        </v-tooltip>
+        <v-tooltip bottom>
+            <template v-slot:activator="{ on }">
+                <v-btn icon v-on="on">
+                    <v-icon>
+                        {{ 'mdi-delete' }}
+                    </v-icon>
+                </v-btn>
+            </template>
+            <span>Delete</span>
+        </v-tooltip>
     </div>
 </template>
 
@@ -17,7 +48,3 @@
         name: "OptionButtons"
     }
 </script>
-
-<style scoped>
-
-</style>
