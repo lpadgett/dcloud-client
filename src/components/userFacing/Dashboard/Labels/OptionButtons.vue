@@ -18,7 +18,7 @@
                     </v-icon>
                 </v-btn>
             </template>
-            <span>Edit</span>
+            <span>Edit Filename</span>
         </v-tooltip>
         <v-tooltip bottom>
             <template v-slot:activator="{ on }">

@@ -4,7 +4,7 @@
                 v-for="file in files"
                 :key="file.name"
                 link
-                v-on:click="clickFile(file)"
+                v-on:dblclick="clickFile(file)"
         >
             <!--state changes for click belong in list item-->
             <!--v-on:click=""-->
