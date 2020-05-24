@@ -4,7 +4,7 @@
                 v-for="file in files"
                 :key="file.name"
                 link
-                v-on:click="showPreview(file.source)"
+                v-on:click="clickFile(file)"
         >
             <!--state changes for click belong in list item-->
             <!--v-on:click=""-->
@@ -38,8 +38,10 @@
             },
         },
         methods: {
-            showPreview: function(sourceLink) {
-                window.open(sourceLink, "_blank");
+            clickFile: function(file) {
+                if(file.type !== 'folder') {
+                    window.open(file.source, "_blank");
+                }
             }
         },
     }
