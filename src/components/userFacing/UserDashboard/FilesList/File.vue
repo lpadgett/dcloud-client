@@ -6,9 +6,6 @@
                 link
                 v-on:dblclick="clickFile(file)"
         >
-            <!--state changes for click belong in list item-->
-            <!--v-on:click=""-->
-            <!--v-on:dblclick=""-->
             <v-list-item-icon>
                 <v-icon v-if="file.type === 'picture'">{{ 'mdi-image' }}</v-icon>
                 <v-icon v-else-if="file.type === 'archive'"> {{ 'mdi-zip-box' }}</v-icon>
@@ -41,6 +38,8 @@
             clickFile: function(file) {
                 if(file.type !== 'folder') {
                     window.open(file.source, "_blank");
+                } else {
+                    this.files = file.children;
                 }
             }
         },
