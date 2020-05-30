@@ -94,7 +94,7 @@ const state = {
             children: null
         },
     ],
-    filePathQueue: [],
+    filePathStack: [],
     isLoading: false
 };
 
@@ -103,7 +103,7 @@ const getters = {
         return state.files;
     },
     getFilePathQueue(state) {
-        return state.filePathQueue;
+        return state.filePathStack;
     },
     isLoading(state) {
         return state.isLoading;
@@ -117,5 +117,15 @@ const actions = {
     addFiles({ commit }, params) {
         //Nothing here yet because no async ops are ready (no backend)
     }
+};
+
+const mutations = {
+    startLoading(state) {
+        state.isLoading = true;
+    },
+    stopLoading(state) {
+        state.isLoading = false;
+    },
+
 };
 
