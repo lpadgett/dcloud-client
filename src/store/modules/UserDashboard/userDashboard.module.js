@@ -111,7 +111,11 @@ const getters = {
 };
 
 const actions = {
-    fetchFiles({ commit }, params) {
-
+    fetchFiles({ commit }) {
+        //Nothing here yet because no async ops are ready (no backend)
+    },
+    addFiles({ commit }, params) {
+        //Nothing here yet because no async ops are ready (no backend)
     }
-}
+};
+
