@@ -36,7 +36,7 @@
         },
         methods: {
             clickFile: function(file) {
-                if(file.type !== 'folder') {
+                if(file.type !== 'folder' && file.source !== null) {
                     window.open(file.source, "_blank");
                 } else {
                     this.files = file.children;

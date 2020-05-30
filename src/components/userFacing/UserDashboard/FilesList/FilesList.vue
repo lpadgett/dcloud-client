@@ -27,11 +27,6 @@ export default {
         File
     },
     methods: {
-        clickFile: function(file) {
-            if(file.type !== 'folder') {
-                window.open(file.source, "_blank");
-            }
-        }
     },
     data () {
         return {
@@ -43,7 +38,7 @@ export default {
                     type: "folder",
                     size: "-",
                     source: null,
-                    lastModified: "date",
+                    lastModified: "date1",
                     favorite: true,
                     children: [
                         {
@@ -53,7 +48,7 @@ export default {
                             type: "picture",
                             size: "1kb",
                             source: "https://siasky.net/CAATt9wrsMQ47g-18XZYhXTwIVoFNlz9j8iKnIeJg2kXhA",
-                            lastModified: "date",
+                            lastModified: "date2",
                             favorite: false,
                             children: null
                         },
@@ -64,7 +59,7 @@ export default {
                             type: "picture",
                             size: "1kb",
                             source: null,
-                            lastModified: "date",
+                            lastModified: "date3",
                             favorite: false,
                             children: null
                         }
@@ -77,7 +72,7 @@ export default {
                     type: "folder",
                     size: "-",
                     source: null,
-                    lastModified: "date",
+                    lastModified: "date4",
                     favorite: false,
                     children: [
                         {
@@ -87,7 +82,7 @@ export default {
                             type: "picture",
                             size: "1kb",
                             source: "https://siasky.net/EACXV8iHR_k5m9bIlNP1MbQzNzJoNLnIJpdgNxKt7P1_ig",
-                            lastModified: "date",
+                            lastModified: "date5",
                             favorite: false,
                             children: null
                         },
@@ -98,7 +93,7 @@ export default {
                             type: "picture",
                             size: "1kb",
                             source: null,
-                            lastModified: "date",
+                            lastModified: "date6",
                             favorite: false,
                             children: null
                         }
@@ -111,7 +106,7 @@ export default {
                     type: "folder",
                     size: "-",
                     source: null,
-                    lastModified: "date",
+                    lastModified: "date7",
                     favorite: true,
                     children: []
                 },
