@@ -12,6 +12,7 @@ const state = {
             source: null,
             lastModified: "date1",
             favorite: true,
+            trashed: false,
             children: [
                 {
                     parent: "1a",
@@ -22,6 +23,7 @@ const state = {
                     source: "https://siasky.net/CAATt9wrsMQ47g-18XZYhXTwIVoFNlz9j8iKnIeJg2kXhA",
                     lastModified: "date2",
                     favorite: false,
+                    trashed: false,
                     children: null
                 },
                 {
@@ -33,6 +35,7 @@ const state = {
                     source: null,
                     lastModified: "date3",
                     favorite: false,
+                    trashed: false,
                     children: null
                 }
             ]
@@ -46,6 +49,7 @@ const state = {
             source: null,
             lastModified: "date4",
             favorite: false,
+            trashed: false,
             children: [
                 {
                     parent: "2a",
@@ -56,6 +60,7 @@ const state = {
                     source: "https://siasky.net/EACXV8iHR_k5m9bIlNP1MbQzNzJoNLnIJpdgNxKt7P1_ig",
                     lastModified: "date5",
                     favorite: false,
+                    trashed: false,
                     children: null
                 },
                 {
@@ -67,6 +72,7 @@ const state = {
                     source: null,
                     lastModified: "date6",
                     favorite: false,
+                    trashed: false,
                     children: null
                 }
             ]
@@ -80,6 +86,7 @@ const state = {
             source: null,
             lastModified: "date7",
             favorite: true,
+            trashed: false,
             children: []
         },
         {
@@ -91,6 +98,7 @@ const state = {
             source: "https://siasky.net/CADdUqC4NLdlS79eyjk5DDINntKWm3B1cRjKPTnXszldLw",
             lastModified: "date1",
             favorite: false,
+            trashed: false,
             children: null
         },
     ],
@@ -126,6 +134,29 @@ const mutations = {
     stopLoading(state) {
         state.isLoading = false;
     },
+    myDcloud(state) {
 
+    },
+    addFile(state, file) {
+
+    },
+    moveFile(state, fileAndDestination) {
+
+    },
+    deleteFile(state, file) {
+
+    },
+    favoriteFile(state, file) {
+
+    },
+    editFileName(state, fileAndNewName) {
+
+    },
+    enterFolder(state, folderName) {
+
+    },
+    exitToFolder(state, levelsBack) {
+
+    }
 };
 
