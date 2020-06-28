@@ -17,7 +17,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { mapState } from "vuex";
 import File from "./File";
 import Title from "../Labels/Title";
 import LabelItem from "../Labels/LabelItem";
@@ -28,15 +27,13 @@ export default {
         LabelItem,
         File
     },
-    // methods: {
-    // },
+    methods: {
+
+    },
     computed: {
         ...mapGetters([
             "getCurrentFiles"
         ]),
-        ...mapState({
-            userFiles: state => state.files,
-        }),
     },
 }
 </script>

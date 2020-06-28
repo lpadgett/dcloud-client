@@ -30,6 +30,11 @@
 
 <script>
     export default {
+        methods: {
+            goToRoot: function () {
+
+            }
+        },
         data () {
             return {
                 username: '[insert username here]',
@@ -43,7 +48,3 @@
         },
     }
 </script>
-
-<style scoped>
-
-</style>

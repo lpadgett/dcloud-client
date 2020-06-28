@@ -34,12 +34,17 @@
                 required: true,
             },
         },
+        computed: {
+
+        },
         methods: {
             clickFile: function(file) {
                 if(file.type !== 'folder' && file.source !== null) {
                     window.open(file.source, "_blank");
-                } else {
+                } else if(file.type === 'folder' && file.children !== null) {
                     this.files = file.children;
+                } else {
+                    alert("Empty File");
                 }
             }
         },

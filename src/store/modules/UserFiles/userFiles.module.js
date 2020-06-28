@@ -151,9 +151,15 @@ const mutations = {
         //
         // },
         enterFolder(state, folderName) { //For entering a folder
-            state.filePathStack.push(state.files);
-            state.files = folderName.children;
-            return state.files;
+            if(folderName.type !== 'folder' && folderName.source !== null) {
+                window.open(folderName.source, "_blank");
+            } else if(folderName.children !== null) {
+                state.filePathStack.push(state.files);
+                state.files = folderName.children;
+                return state.files;
+            } else {
+                alert("This file is empty");
+            }
         },
         // exitToFolder(state, levelsBack) { //For exiting to a folder
         //
