@@ -1,8 +1,8 @@
-import Vue from 'vue';
-import App from './components/public/App.vue';
-import vuetify from './plugins/vuetify';
-import router from './router/routes.js'
-import { store } from './store.store';
+import Vue from "vue";
+import App from "./components/public/App.vue";
+import vuetify from "./plugins/vuetify";
+import router from "./router/routes.js";
+import store from "./store";
 
 Vue.use(vuetify);
 

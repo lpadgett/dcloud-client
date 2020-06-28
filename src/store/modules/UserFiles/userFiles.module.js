@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-const userFiles = {
-    state: () => ({
+const state = {
         files: [
             {
                 parent: null,
@@ -103,8 +102,9 @@ const userFiles = {
         ],
         filePathStack: [],
         isLoading: false
-    }),
-    getters: {
+};
+
+const getters = {
         getCurrentFiles(state) {
             return state.files;
         },
@@ -114,16 +114,18 @@ const userFiles = {
         isLoading(state) {
             return state.isLoading;
         }
-    },
-    actions: {
+};
+
+const actions = {
         // fetchFiles({commit}) {
         //     //Nothing here yet because no async ops are ready (no backend)
         // },
         // addFiles({commit}, params) {
         //     //Nothing here yet because no async ops are ready (no backend)
         // }
-    },
-    mutations: {
+};
+
+const mutations = {
         startLoading(state) {
             state.isLoading = true;
         },
@@ -149,10 +151,18 @@ const userFiles = {
         //
         // },
         enterFolder(state, folderName) { //For entering a folder
-            return state.files.children
+            state.filePathStack.push(state.files);
+            state.files = folderName.children;
+            return state.files;
         },
         // exitToFolder(state, levelsBack) { //For exiting to a folder
         //
         // }
-    }
+};
+
+export default {
+    state,
+    getters,
+    actions,
+    mutations
 }
