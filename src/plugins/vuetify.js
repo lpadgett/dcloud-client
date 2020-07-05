@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
+import DCloudIcon from "../assets/icons/DCloudIcon";
 
 Vue.use(Vuetify);
 
@@ -16,5 +17,12 @@ export default new Vuetify({
                 success: '#4caf50'
             }
         }
-    }
+    },
+    icons: {
+      values: {
+          dcloud: {
+              component: DCloudIcon,
+          }
+      },
+    },
 });

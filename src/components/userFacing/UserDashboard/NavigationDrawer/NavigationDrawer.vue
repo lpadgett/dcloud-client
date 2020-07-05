@@ -19,7 +19,7 @@
                     v-on:click="handleClick(button.title)"
             >
                 <v-list-item-icon>
-                    <v-icon>{{ button.icon }}</v-icon>
+                    <v-icon v-bind:color="button.color">{{ button.icon }}</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                     <v-list-item-title>{{ button.title }}</v-list-item-title>
@@ -51,7 +51,7 @@ export default {
             } else {
                 alert("You clicked something other than My DCloud");
             }
-        }
+        },
     },
 }
 </script>
