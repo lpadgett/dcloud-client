@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
     export default {
         name: "File",
         props: {
@@ -34,19 +36,10 @@
                 required: true,
             },
         },
-        computed: {
-
-        },
         methods: {
-            clickFile: function(file) {
-                if(file.type !== 'folder' && file.source !== null) {
-                    window.open(file.source, "_blank");
-                } else if(file.type === 'folder' && file.children !== null) {
-                    this.files = file.children;
-                } else {
-                    alert("Empty File");
-                }
-            }
+            ...mapMutations([
+                "enterFolder"
+            ])
         },
     }
 </script>

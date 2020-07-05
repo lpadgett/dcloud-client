@@ -16,6 +16,7 @@
                     v-for="item in items"
                     :key="item.title"
                     link
+                    v-on:click="handleClick(item.title)"
             >
                 <v-list-item-icon>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -29,22 +30,32 @@
 </template>
 
 <script>
-    export default {
-        methods: {
-            goToRoot: function () {
+import { mapMutations } from "vuex";
 
+export default {
+    methods: {
+        ...mapMutations([
+            "goToUserFilesRoot" //Maps this.goToUserFilesRoot to this.$store.commit('goToUserFilesRoot')
+        ]),
+        //FileView function views file
+        handleClick: function (item) {
+            if(item == "My DCloud"){
+                this.goToUserFilesRoot();
+            } else {
+                alert("You clicked something other than My DCloud");
             }
-        },
-        data () {
-            return {
-                username: '[insert username here]',
-                items: [
-                    { title: 'My DCloud', icon: 'mdi-cloud' },
-                    { title: 'Favorites', icon: 'mdi-heart' },
-                    { title: 'Trash', icon: 'mdi-delete' }
-                ],
-                right: null,
-            }
-        },
-    }
+        }
+    },
+    data () {
+        return {
+            username: '[insert username here]',
+            items: [
+                { title: 'My DCloud', icon: 'mdi-cloud' },
+                { title: 'Favorites', icon: 'mdi-heart' },
+                { title: 'Trash', icon: 'mdi-delete' }
+            ],
+            right: null,
+        }
+    },
+}
 </script>

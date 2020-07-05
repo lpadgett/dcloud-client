@@ -9,7 +9,7 @@
                     color="secondary"
                     max="1"
             >
-                <File :files="getCurrentFiles"/>
+                <File :files="getCurrentFilesBeingViewed"/>
             </v-list-item-group>
         </v-list>
     </div>
@@ -27,12 +27,9 @@ export default {
         LabelItem,
         File
     },
-    methods: {
-
-    },
     computed: {
         ...mapGetters([
-            "getCurrentFiles"
+            "getCurrentFilesBeingViewed"
         ]),
     },
 }
