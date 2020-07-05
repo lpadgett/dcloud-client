@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import NavigationDrawer from "../components/userFacing/UserDashboard/NavigationDrawer";
-import FilesList from "../components/userFacing/UserDashboard/FilesList/FilesList";
+import NavigationDrawer from "../components/userFacing/UserDashboard/NavigationDrawer/NavigationDrawer";
+import FilesList from "../components/userFacing/UserDashboard/Files/FilesList/FilesList";
 export default {
     components: {
         NavigationDrawer,

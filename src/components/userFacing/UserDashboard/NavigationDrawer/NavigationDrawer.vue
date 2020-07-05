@@ -6,23 +6,23 @@
                     My DCloud
                 </v-list-item-title>
                 <v-list-item-subtitle>
-                    Welcome, {{ username }}!
+                    Welcome, {{ getUsername }}!
                 </v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
         <v-divider/>
         <v-list dense nav align="stretch">
             <v-list-item
-                    v-for="item in items"
-                    :key="item.title"
+                    v-for="button in getSidebarButtons"
+                    :key="button.title"
                     link
-                    v-on:click="handleClick(item.title)"
+                    v-on:click="handleClick(button.title)"
             >
                 <v-list-item-icon>
-                    <v-icon>{{ item.icon }}</v-icon>
+                    <v-icon>{{ button.icon }}</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
-                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                    <v-list-item-title>{{ button.title }}</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
         </v-list>
@@ -31,8 +31,15 @@
 
 <script>
 import { mapMutations } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
+    computed: {
+        ...mapGetters([
+            "getUsername",
+            "getSidebarButtons"
+        ]),
+    },
     methods: {
         ...mapMutations([
             "goToUserFilesRoot" //Maps this.goToUserFilesRoot to this.$store.commit('goToUserFilesRoot')
@@ -44,16 +51,6 @@ export default {
             } else {
                 alert("You clicked something other than My DCloud");
             }
-        }
-    },
-    data () {
-        return {
-            username: '[insert username here]',
-            items: [
-                { title: 'My DCloud', icon: 'mdi-cloud' },
-                { title: 'Favorites', icon: 'mdi-heart' },
-                { title: 'Trash', icon: 'mdi-delete' }
-            ],
         }
     },
 }

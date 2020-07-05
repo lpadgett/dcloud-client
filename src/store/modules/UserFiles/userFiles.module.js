@@ -51,7 +51,7 @@ const state = {
                 {
                     parent: "2a",
                     id: "2b",
-                    name: "test1",
+                    name: "test2",
                     type: "picture",
                     size: "1kb",
                     source: "https://siasky.net/EACXV8iHR_k5m9bIlNP1MbQzNzJoNLnIJpdgNxKt7P1_ig",
@@ -89,7 +89,7 @@ const state = {
         {
             parent: null,
             id: "2b",
-            name: "test1",
+            name: "test3",
             type: "picture",
             size: "1kb",
             source: "https://siasky.net/CADdUqC4NLdlS79eyjk5DDINntKWm3B1cRjKPTnXszldLw",
@@ -151,7 +151,7 @@ const state = {
                 {
                     parent: "2a",
                     id: "2b",
-                    name: "test1",
+                    name: "test2",
                     type: "picture",
                     size: "1kb",
                     source: "https://siasky.net/EACXV8iHR_k5m9bIlNP1MbQzNzJoNLnIJpdgNxKt7P1_ig",
@@ -189,7 +189,7 @@ const state = {
         {
             parent: null,
             id: "2b",
-            name: "test1",
+            name: "test3",
             type: "picture",
             size: "1kb",
             source: "https://siasky.net/CADdUqC4NLdlS79eyjk5DDINntKWm3B1cRjKPTnXszldLw",

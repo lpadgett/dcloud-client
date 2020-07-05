@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import OptionButtons from '../Labels/OptionButtons.vue';
+import OptionButtons from './OptionButtons.vue';
 
     export default {
         name: "TitleItem",
