@@ -1,16 +1,6 @@
 <template>
     <v-navigation-drawer permanent justify="start" align="stretch" width="100%">
-        <v-list-item>
-            <v-list-item-content>
-                <v-list-item-title class="title">
-                    My DCloud
-                </v-list-item-title>
-                <v-list-item-subtitle>
-                    Welcome, {{ getUsername }}!
-                </v-list-item-subtitle>
-            </v-list-item-content>
-        </v-list-item>
-        <v-divider/>
+        <Welcomer/>
         <v-list dense nav align="stretch">
             <v-list-item
                     v-for="button in getSidebarButtons"
@@ -32,11 +22,14 @@
 <script>
 import { mapMutations } from "vuex";
 import { mapGetters } from "vuex";
+import Welcomer from "./Welcomer.vue";
 
 export default {
+    components: {
+        Welcomer
+    },
     computed: {
         ...mapGetters([
-            "getUsername",
             "getSidebarButtons"
         ]),
     },

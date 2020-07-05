@@ -24,7 +24,7 @@
 </template>
 
 <script>
-    import LogoSVG from '../components/public/LogoSVG';
+    import LogoSVG from '../../components/public/LogoSVG';
 
     export default {
 
