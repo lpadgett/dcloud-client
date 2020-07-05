@@ -249,15 +249,14 @@ const mutations = {
     // editFileName(state, fileAndNewName) { //For editing the name of a file/folder
     //
     // },
-    enterFolder(state, folderName) { //For entering a folder
+    clickFile(state, folderName) { //For entering a folder or opening a non-folder file
         if(folderName.type !== 'folder' && folderName.source !== null) {
             window.open(folderName.source, "_blank");
         } else if(folderName.children !== null) {
-            state.filePathStack.push(state.files);
-            state.files = folderName.children;
-            return state.files;
+            state.filePathStack.push(state.currentFilesBeingViewed);
+            state.currentFilesBeingViewed = folderName.children;
         } else {
-            alert("This file is empty!");
+            alert("This file is empty (see line 259 in userFiles.module.js to change this text)!");
         }
     },
     // exitToFolder(state, levelsBack) { //For exiting to a folder

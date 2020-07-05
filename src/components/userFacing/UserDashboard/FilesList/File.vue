@@ -38,7 +38,7 @@ import { mapMutations } from "vuex";
         },
         methods: {
             ...mapMutations([
-                "enterFolder"
+                "clickFile"
             ])
         },
     }
