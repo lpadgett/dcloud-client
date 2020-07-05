@@ -54,7 +54,6 @@ export default {
                 { title: 'Favorites', icon: 'mdi-heart' },
                 { title: 'Trash', icon: 'mdi-delete' }
             ],
-            right: null,
         }
     },
 }
