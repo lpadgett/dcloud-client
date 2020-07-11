@@ -1,6 +1,6 @@
 <template>
     <v-app-bar app="false" color="primary" flat>
-        <div id="logo" class="pa-2">
+        <div id="logo" class="logo">
             <LogoSVG height=90 width="90" color="white"/>
         </div>
 
@@ -31,3 +31,10 @@
         }
     }
 </script>
+
+<style scoped>
+    .logo {
+        margin-bottom: 2px;
+        margin-top: 5px;
+    }
+</style>

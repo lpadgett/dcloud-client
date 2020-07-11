@@ -4,7 +4,9 @@ const state = {
         { title: 'My DCloud', icon: '$vuetify.icons.dcloud', color: "grey" }, //Custom icon
         { title: 'Favorites', icon: 'mdi-heart', color: "red" },
         { title: 'Trash', icon: 'mdi-delete', color: "grey" }
-    ]
+    ],
+    currentUserStorageUsage: 3,
+    userStorageLimit: 5,
 };
 
 const getters = {
@@ -13,6 +15,12 @@ const getters = {
     },
     getSidebarButtons(state) {
         return state.sidebarButtons;
+    },
+    getCurrentUserStorageUsage(state) {
+        return state.currentUserStorageUsage;
+    },
+    getUserStorageLimit(state) {
+        return state.userStorageLimit;
     }
 };
 

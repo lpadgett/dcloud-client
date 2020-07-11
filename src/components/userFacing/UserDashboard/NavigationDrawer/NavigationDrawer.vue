@@ -16,6 +16,7 @@
                 </v-list-item-content>
             </v-list-item>
         </v-list>
+        <UsageEstimator/>
     </v-navigation-drawer>
 </template>
 
@@ -23,14 +24,16 @@
 import { mapMutations } from "vuex";
 import { mapGetters } from "vuex";
 import Welcomer from "./Welcomer.vue";
+import UsageEstimator from "./UsageEstimator/UsageEstimator";
 
 export default {
     components: {
-        Welcomer
+        Welcomer,
+        UsageEstimator
     },
     computed: {
         ...mapGetters([
-            "getSidebarButtons"
+            "getSidebarButtons",
         ]),
     },
     methods: {
