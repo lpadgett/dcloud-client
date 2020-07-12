@@ -33,7 +33,7 @@
 </script>
 
 <style scoped>
-    .logo {
+    #logo {
         margin-bottom: 2px;
         margin-top: 5px;
     }

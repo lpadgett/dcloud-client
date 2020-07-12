@@ -1,8 +1,9 @@
 <template>
     <v-list-item>
         <div class="storage-usage"> <!-- TODO: don't hardcode "GB" -->
-            <p>Usage: {{ getCurrentUserStorageUsage }}GB of {{ getUserStorageLimit }}GB</p>
-            <v-progress-linear v-model="storageUsage" color="secondary"/>
+            <br/>
+            <p>Storage: {{ currentStorageUsed }} of {{ maxStorageCapacity }} Used</p>
+            <v-progress-linear v-model="percentStorageUsed" color="secondary"/>
         </div>
     </v-list-item>
 </template>
@@ -17,9 +18,23 @@ export default {
             "getCurrentUserStorageUsage",
             "getUserStorageLimit",
         ]),
-        storageUsage: function () {
+        currentStorageUsed: function() {
+            if(this.getCurrentUserStorageUsage >= 1000) {
+                return ((this.getCurrentUserStorageUsage / 1000) + " TB");
+            } else {
+                return (this.getCurrentUserStorageUsage + " GB");
+            }
+        },
+        maxStorageCapacity: function () {
+            if(this.getUserStorageLimit >= 1000) {
+                return ((this.getUserStorageLimit / 1000) + " TB");
+            } else {
+                return "GB";
+            }
+        },
+        percentStorageUsed: function () { //Turns storage usage into percentage for usage in the usage bar
             return 100*(this.getCurrentUserStorageUsage/this.getUserStorageLimit);
-        }
+        },
     },
 }
 </script>

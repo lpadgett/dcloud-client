@@ -5,8 +5,8 @@ const state = {
         { title: 'Favorites', icon: 'mdi-heart', color: "red" },
         { title: 'Trash', icon: 'mdi-delete', color: "grey" }
     ],
-    currentUserStorageUsage: 3,
-    userStorageLimit: 5,
+    currentUserStorageUsageGB: 300,
+    userStorageLimitGB: 1000,
 };
 
 const getters = {
@@ -17,10 +17,10 @@ const getters = {
         return state.sidebarButtons;
     },
     getCurrentUserStorageUsage(state) {
-        return state.currentUserStorageUsage;
+        return state.currentUserStorageUsageGB;
     },
     getUserStorageLimit(state) {
-        return state.userStorageLimit;
+        return state.userStorageLimitGB;
     }
 };
 
