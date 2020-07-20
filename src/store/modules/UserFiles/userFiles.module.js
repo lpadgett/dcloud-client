@@ -34,6 +34,31 @@ const state = {
                     favorite: false,
                     trashed: false,
                     children: null
+                },
+                {
+                    parent: "1a",
+                    id: "1d",
+                    name: "secondLayerForFileNavbarTest",
+                    type: "folder",
+                    side: "-",
+                    source: null,
+                    lastModified: "date test",
+                    favorite: false,
+                    trashed: false,
+                    children: [
+                        {
+                            parent: "1a",
+                            id: "1e",
+                            name: "thirdLayerForFileNavbarTest",
+                            type: "folder",
+                            size: "-",
+                            source: null,
+                            lastModified: "date test1",
+                            favorite: false,
+                            trashed: false,
+                            children: []
+                        }
+                    ]
                 }
             ]
         },
@@ -134,6 +159,31 @@ const state = {
                     favorite: false,
                     trashed: false,
                     children: null
+                },
+                {
+                    parent: "1a",
+                    id: "1d",
+                    name: "secondLayerForFileNavbarTest",
+                    type: "folder",
+                    side: "-",
+                    source: null,
+                    lastModified: "date test",
+                    favorite: false,
+                    trashed: false,
+                    children: [
+                        {
+                            parent: "1a",
+                            id: "1e",
+                            name: "thirdLayerForFileNavbarTest",
+                            type: "folder",
+                            size: "-",
+                            source: null,
+                            lastModified: "date test1",
+                            favorite: false,
+                            trashed: false,
+                            children: []
+                        }
+                    ]
                 }
             ]
         },
@@ -199,7 +249,8 @@ const state = {
             children: null
         },
     ],
-    filePathStack: [],
+    filepathStack: [],
+    folderHistory: [],
     isLoading: false
 };
 
@@ -208,7 +259,10 @@ const getters = {
         return state.currentFilesBeingViewed;
     },
     getFilePathStack(state) {
-        return state.filePathStack;
+        return state.filepathStack;
+    },
+    getFolderHistory(state) {
+        return state.folderHistory;
     },
     isLoading(state) {
         return state.isLoading;
@@ -227,39 +281,24 @@ const actions = {
 const mutations = {
     goToUserFilesRoot(state) {
         state.currentFilesBeingViewed = state.userFiles;
+        state.filepathStack = [];
     },
-    // startLoading(state) {
-    //     state.isLoading = true;
-    // },
-    // stopLoading(state) {
-    //     state.isLoading = false;
-    // },
-    // addFile(state, file) { //For adding a file
-    //
-    // },
-    // moveFile(state, fileAndDestination) { //For moving a file/folder
-    //
-    // },
-    // deleteFile(state, file) { //For deleting a file/folder
-    //
-    // },
-    // favoriteFile(state, file) { //For favoriting a file/folder
-    //
-    // },
-    // editFileName(state, fileAndNewName) { //For editing the name of a file/folder
-    //
-    // },
     clickFile(state, folderName) { //For entering a folder or opening a non-folder file
         if(folderName.type !== 'folder' && folderName.source !== null) {
             window.open(folderName.source, "_blank");
         } else if(folderName.children !== null) {
-            state.filePathStack.push(state.currentFilesBeingViewed);
+            state.filepathStack.push(state.currentFilesBeingViewed);
             state.currentFilesBeingViewed = folderName.children;
+            state.folderHistory.push(
+                {
+                    //TODO: Insert json of breadcrumb menu item here
+                }
+            );
         } else {
             alert("This file is empty (see line 259 in userFiles.module.js to change this text)!");
         }
     },
-    // exitToFolder(state, levelsBack) { //For exiting to a folder
+    // goBackInFilePathStack(state, folder) { //For exiting to a folder
     //
     // }
 };

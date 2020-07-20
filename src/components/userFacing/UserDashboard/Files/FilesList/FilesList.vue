@@ -18,7 +18,7 @@
 <script>
 import { mapGetters } from "vuex";
 import File from "./File";
-import Title from "../Labels/Title";
+import Title from "../UtilityBar/UtilityBar";
 import LabelItem from "../Labels/LabelItem";
 
 export default {
