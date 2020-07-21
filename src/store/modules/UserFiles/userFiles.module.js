@@ -282,18 +282,20 @@ const mutations = {
     goToUserFilesRoot(state) {
         state.currentFilesBeingViewed = state.userFiles;
         state.filepathStack = [];
+        state.folderHistory = [];
     },
-    clickFile(state, folderName) { //For entering a folder or opening a non-folder file
-        if(folderName.type !== 'folder' && folderName.source !== null) {
-            window.open(folderName.source, "_blank");
-        } else if(folderName.children !== null) {
+    clickFile(state, file) { //For entering a folder or opening a non-folder file
+        if(file.type !== 'folder' && file.source !== null) {
+            window.open(file.source, "_blank");
+        } else if(file.children !== null) {
             state.filepathStack.push(state.currentFilesBeingViewed);
-            state.currentFilesBeingViewed = folderName.children;
             state.folderHistory.push(
                 {
-                    //TODO: Insert json of breadcrumb menu item here
+                    text: state.currentFilesBeingViewed[0].name,
+                    disabled: false
                 }
-            );
+            )
+            state.currentFilesBeingViewed = file.children;
         } else {
             alert("This file is empty (see line 259 in userFiles.module.js to change this text)!");
         }

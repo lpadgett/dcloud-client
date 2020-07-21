@@ -3,7 +3,8 @@
         <v-list-item-content>
             <v-list-item-title id="MyFiles">My Files / </v-list-item-title>
         </v-list-item-content>
-        <FilepathBar :folderHistory="getFilePathStack"/>
+        <FilepathBar :folderHistory="getFolderHistory"/>
+        <v-spacer/>
         <OptionButtons/>
     </v-list-item>
 </template>
@@ -21,7 +22,7 @@ import FilepathBar from "./FilepathBar";
         },
         computed: {
             ...mapGetters([
-                "getFilePathStack",
+                "getFolderHistory",
             ]),
         },
     }
