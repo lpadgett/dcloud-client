@@ -291,7 +291,7 @@ const mutations = {
             state.filepathStack.push(state.currentFilesBeingViewed);
             state.folderHistory.push(
                 {
-                    text: state.currentFilesBeingViewed[0].name,
+                    text: file.name,
                     disabled: false
                 }
             )
