@@ -1,12 +1,14 @@
 <template>
-    <v-list-item>
-        <v-list-item-content>
-            <v-list-item-title id="MyFiles">My Files / </v-list-item-title>
-        </v-list-item-content>
-        <FilepathBar :folderHistory="getFolderHistory"/>
-        <v-spacer/>
-        <OptionButtons/>
-    </v-list-item>
+    <v-row id="filepath-row">
+        <v-col :cols="8">
+            <FilepathBar :folderHistory="getFolderHistory"/>
+        </v-col>
+        <v-col :cols="4">
+            <v-row id="option-buttons">
+                <OptionButtons/>
+            </v-row>
+        </v-col>
+    </v-row>
 </template>
 
 <script>
@@ -29,7 +31,8 @@ import FilepathBar from "./FilepathBar";
 </script>
 
 <style scoped>
-    .v-list-item-title MyFiles {
-        font-size: large;
+    #option-buttons {
+        padding-right: 10%;
+        justify-content: flex-end;
     }
 </style>

@@ -282,7 +282,12 @@ const mutations = {
     goToUserFilesRoot(state) {
         state.currentFilesBeingViewed = state.userFiles;
         state.filepathStack = [];
-        state.folderHistory = [];
+        state.folderHistory = [
+            {
+                text: "My DCloud",
+                disabled: false, //Add href to make clickable
+            }
+        ];
     },
     clickFile(state, file) { //For entering a folder or opening a non-folder file
         if(file.type !== 'folder' && file.source !== null) {
@@ -292,7 +297,7 @@ const mutations = {
             state.folderHistory.push(
                 {
                     text: file.name,
-                    disabled: false
+                    disabled: false, //Add href to make clickable
                 }
             )
             state.currentFilesBeingViewed = file.children;
