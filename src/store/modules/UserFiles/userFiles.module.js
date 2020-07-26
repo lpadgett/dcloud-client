@@ -249,7 +249,6 @@ const state = {
             children: null
         },
     ],
-    filepathStack: [],
     folderHistory: [
         {
             text: "My DCloud",
@@ -424,7 +423,6 @@ const mutations = {
         if(file.type !== 'folder' && file.source !== null) {
             window.open(file.source, "_blank");
         } else if(file.children !== null) {
-            state.filepathStack.push(state.currentFilesBeingViewed); //TODO: Get rid of redundant filepathstack state var
             state.folderHistory.push(
                 {
                     text: file.name,
@@ -437,9 +435,19 @@ const mutations = {
             alert("This file is empty (see line 259 in userFiles.module.js to change this text)!");
         }
     },
-    // goBackInFilePathStack(state, folder) { //For exiting to a folder
-    //
-    // }
+    goBackToFolder(state, folder) {
+        let equal = require("deep-equal") //Use deep-equal because json.stringify could return false negatives
+        //TODO: Operate on a temporary variable instead of the state variable itself so you don't accidentally screw up the state if there is a bug
+        //TODO: account for edge case where desired folder doesn't exist in folder history?
+        for (let i = (state.folderHistory.length - 1); i > 0; i--) { //Adjust file path bar according to what folder you go back to. Must be length - 1 since the first element must always be kept
+            if (equal(state.folderHistory[i], folder)) {
+                state.currentFilesBeingViewed = folder.children;
+                break;
+            } else {
+                state.folderHistory.pop();
+            }
+        }
+    }
 };
 
 export default {

@@ -3,7 +3,6 @@
         <v-list-item
                 v-for="file in files"
                 :key="file.name"
-                link
                 v-on:dblclick="clickFile(file)"
         >
             <v-list-item-icon>
@@ -28,18 +27,18 @@
 <script>
 import { mapMutations } from "vuex";
 
-    export default {
-        name: "File",
-        props: {
-            files: {
-                type: Array,
-                required: true,
-            },
+export default {
+    name: "File",
+    props: {
+        files: {
+            type: Array,
+            required: true,
         },
-        methods: {
-            ...mapMutations([
-                "clickFile"
-            ])
-        },
-    }
+    },
+    methods: {
+        ...mapMutations([
+            "clickFile"
+        ])
+    },
+}
 </script>
