@@ -249,10 +249,9 @@ const state = {
             children: null
         },
     ],
-    folderHistory: [
+    folderHistory: [ //For FilepathBar component
         {
             text: "My DCloud",
-            disabled: false, //Add href to make clickable
             linkedFiles: [
                 {
                     parent: null,
@@ -410,7 +409,6 @@ const actions = {
 const mutations = {
     goToUserFilesRoot(state) {
         state.currentFilesBeingViewed = state.userFiles;
-        state.filepathStack = [];
         state.folderHistory = [
             {
                 text: "My DCloud",
@@ -426,7 +424,6 @@ const mutations = {
             state.folderHistory.push(
                 {
                     text: file.name,
-                    disabled: false, //Add href to make clickable
                     linkedFiles: state.currentFilesBeingViewed //Store filepath stack inside of folder history for easy nav
                 }
             )
@@ -441,11 +438,16 @@ const mutations = {
         //TODO: account for edge case where desired folder doesn't exist in folder history?
         for (let i = (state.folderHistory.length - 1); i > 0; i--) { //Adjust file path bar according to what folder you go back to. Must be length - 1 since the first element must always be kept
             if (equal(state.folderHistory[i], folder)) {
-                state.currentFilesBeingViewed = folder.children;
+                state.currentFilesBeingViewed = folder.linkedFiles;
                 break;
             } else {
                 state.folderHistory.pop();
             }
+        }
+
+        if (state.folderHistory.length === 1 && state.folderHistory[0].text === "My DCloud") {
+            //If the user clicked on the first element in the array, bring user back to root directory
+            state.currentFilesBeingViewed = state.userFiles;
         }
     }
 };
