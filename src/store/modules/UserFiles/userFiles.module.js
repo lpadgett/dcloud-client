@@ -433,7 +433,7 @@ const mutations = {
     },
     goBackToFolder(state, folder) {
         let equal = require("deep-equal") //Use deep-equal because json.stringify could return false negatives
-        //TODO: Operate on a temporary variable instead of the state variable itself so you don't accidentally screw up the state if there is a bug
+        //TODO: Operate on a temporary variable instead of the state variable itself so you don't accidentally screw up the state if there is a bug?
         //TODO: account for edge case where desired folder doesn't exist in folder history?
         for (let i = (state.folderHistory.length - 1); i > 0; i--) { //Adjust file path bar according to what folder you go back to. Must be length - 1 since the first element must always be kept
             if (equal(state.folderHistory[i], folder)) {
