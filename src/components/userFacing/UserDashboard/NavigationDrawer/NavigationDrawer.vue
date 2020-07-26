@@ -1,6 +1,7 @@
 <template>
     <v-navigation-drawer id="" permanent justify="start" align="stretch" width="100%">
         <Welcomer/>
+        <v-divider/>
         <v-list dense nav align="stretch">
             <v-list-item
                     v-for="button in getSidebarButtons"

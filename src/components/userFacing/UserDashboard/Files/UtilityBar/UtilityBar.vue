@@ -1,10 +1,10 @@
 <template>
     <v-row id="filepath-row">
-        <v-col :cols="8">
+        <v-col :cols="9">
             <FilepathBar :folderHistory="getFolderHistory"/>
         </v-col>
-        <v-col :cols="4">
-            <v-row id="option-buttons">
+        <v-col :cols="3">
+            <v-row id="option-buttons-row">
                 <OptionButtons/>
             </v-row>
         </v-col>
@@ -31,8 +31,14 @@ import FilepathBar from "./FilepathBar";
 </script>
 
 <style scoped>
-    #option-buttons {
-        padding-right: 10%;
+    #filepath-row {
+        justify-content: center;
+        align-items: center;
+    }
+    #option-buttons-row {
         justify-content: flex-end;
+        align-items: center;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Title/>
+        <UtilityBar/>
         <v-divider/>
         <v-list>
             <LabelItem/>
@@ -18,12 +18,12 @@
 <script>
 import { mapGetters } from "vuex";
 import File from "./File";
-import Title from "../UtilityBar/UtilityBar";
+import UtilityBar from "../UtilityBar/UtilityBar";
 import LabelItem from "../Labels/LabelItem";
 
 export default {
     components: {
-        Title,
+        UtilityBar,
         LabelItem,
         File
     },

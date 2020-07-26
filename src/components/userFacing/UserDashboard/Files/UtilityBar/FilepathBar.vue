@@ -3,9 +3,7 @@
         <v-breadcrumbs-item
                 v-for="directory in filePathStack"
                 :key="directory"
-        >
-            {{ directory.text }}
-        </v-breadcrumbs-item>
+        />
     </v-breadcrumbs>
 </template>
 

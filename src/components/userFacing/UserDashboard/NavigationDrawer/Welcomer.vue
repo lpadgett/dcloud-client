@@ -10,7 +10,6 @@
                 </v-list-item-subtitle>
             </v-list-item-content>
         </v-list-item>
-        <v-divider/>
     </div>
 </template>
 
