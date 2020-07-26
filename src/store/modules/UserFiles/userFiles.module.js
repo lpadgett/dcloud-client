@@ -251,8 +251,8 @@ const state = {
     ],
     folderHistory: [ //For FilepathBar component
         {
-            text: "My DCloud",
-            linkedFiles: [
+            folderName: "My DCloud", //Root element
+            directoryContents: [
                 {
                     parent: null,
                     id: "1a",
@@ -411,9 +411,8 @@ const mutations = {
         state.currentFilesBeingViewed = state.userFiles;
         state.folderHistory = [
             {
-                text: "My DCloud",
-                disabled: false, //Add href to make clickable
-                linkedFiles: state.userFiles
+                folderName: "My DCloud",
+                directoryContents: state.userFiles
             }
         ];
     },
@@ -423,8 +422,8 @@ const mutations = {
         } else if(file.children !== null) {
             state.folderHistory.push(
                 {
-                    text: file.name,
-                    linkedFiles: state.currentFilesBeingViewed //Store filepath stack inside of folder history for easy nav
+                    folderName: file.name,
+                    directoryContents: file.children
                 }
             )
             state.currentFilesBeingViewed = file.children;
@@ -434,18 +433,18 @@ const mutations = {
     },
     goBackToFolder(state, folder) {
         let equal = require("deep-equal") //Use deep-equal because json.stringify could return false negatives
-        //TODO: Operate on a temporary variable instead of the state variable itself so you don't accidentally screw up the state if there is a bug?
+        //TODO: Operate on a temporary variable instead of the state variable itself so you don't accidentally screw up the state if there is a bug
         //TODO: account for edge case where desired folder doesn't exist in folder history?
         for (let i = (state.folderHistory.length - 1); i > 0; i--) { //Adjust file path bar according to what folder you go back to. Must be length - 1 since the first element must always be kept
             if (equal(state.folderHistory[i], folder)) {
-                state.currentFilesBeingViewed = folder.linkedFiles;
+                state.currentFilesBeingViewed = folder.directoryContents;
                 break;
             } else {
                 state.folderHistory.pop();
             }
         }
 
-        if (state.folderHistory.length === 1 && state.folderHistory[0].text === "My DCloud") {
+        if (state.folderHistory.length === 1 && state.folderHistory[0].folderName === "My DCloud") {
             //If the user clicked on the first element in the array, bring user back to root directory
             state.currentFilesBeingViewed = state.userFiles;
         }

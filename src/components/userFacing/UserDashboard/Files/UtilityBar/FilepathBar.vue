@@ -7,8 +7,8 @@
         />
     </v-breadcrumbs>-->
     <v-row id="actionable-breadcrumb-navbar">
-        <v-chip v-for="folder in folderHistory" :key="folder.text" @click="goBackToFolder(folder)">
-                {{ folder.text }}
+        <v-chip v-for="folder in folderHistory" :key="folder.folderName" @click="goBackToFolder(folder)">
+                {{ folder.folderName }}
         </v-chip>
     </v-row>
 </template>
