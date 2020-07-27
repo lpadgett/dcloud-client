@@ -1,7 +1,7 @@
 <template>
     <v-row id="filepath-row">
         <v-col :cols="9">
-            <FilepathBar :folderHistory="getFolderHistory"/>
+            <FilepathBar id="filepath-bar" :folderHistory="getFolderHistoryPostRoot"/>
         </v-col>
         <v-col :cols="3">
             <v-row id="option-buttons-row">
@@ -24,7 +24,7 @@ import FilepathBar from "./FilepathBar";
         },
         computed: {
             ...mapGetters([
-                "getFolderHistory",
+                "getFolderHistoryPostRoot"
             ]),
         },
     }
@@ -35,10 +35,16 @@ import FilepathBar from "./FilepathBar";
         justify-content: center;
         align-items: center;
     }
+
     #option-buttons-row {
         justify-content: flex-end;
         align-items: center;
-        padding-left: 15px;
         padding-right: 15px;
+    }
+
+    #filepath-bar {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-left: 15px;
     }
 </style>

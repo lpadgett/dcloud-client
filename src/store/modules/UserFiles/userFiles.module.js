@@ -249,8 +249,7 @@ const state = {
             children: null
         },
     ],
-    folderHistory: [ //For FilepathBar component
-        {
+    folderHistoryRoot: {
             folderName: "My DCloud", //Root element
             directoryContents: [
                 {
@@ -377,8 +376,8 @@ const state = {
                     children: null
                 },
             ]
-        }
-    ],
+        },
+    folderHistoryPostRoot: [],
     isLoading: false
 };
 
@@ -389,8 +388,11 @@ const getters = {
     getFilePathStack(state) {
         return state.filepathStack;
     },
-    getFolderHistory(state) {
-        return state.folderHistory;
+    getFolderHistoryRoot(state) {
+        return state.folderHistoryRoot;
+    },
+    getFolderHistoryPostRoot(state) {
+        return state.folderHistoryPostRoot;
     },
     isLoading(state) {
         return state.isLoading;
@@ -409,18 +411,13 @@ const actions = {
 const mutations = {
     goToUserFilesRoot(state) {
         state.currentFilesBeingViewed = state.userFiles;
-        state.folderHistory = [
-            {
-                folderName: "My DCloud",
-                directoryContents: state.userFiles
-            }
-        ];
+        state.folderHistoryPostRoot = [];
     },
     clickFile(state, file) { //For entering a folder or opening a non-folder file
         if(file.type !== 'folder' && file.source !== null) {
             window.open(file.source, "_blank");
         } else if(file.children !== null) {
-            state.folderHistory.push(
+            state.folderHistoryPostRoot.push(
                 {
                     folderName: file.name,
                     directoryContents: file.children
@@ -435,18 +432,13 @@ const mutations = {
         let equal = require("deep-equal") //Use deep-equal because json.stringify could return false negatives
         //TODO: Operate on a temporary variable instead of the state variable itself so you don't accidentally screw up the state if there is a bug?
         //TODO: account for edge case where desired folder doesn't exist in folder history?
-        for (let i = (state.folderHistory.length - 1); i > 0; i--) { //Adjust file path bar according to what folder you go back to. Must be length - 1 since the first element must always be kept
-            if (equal(state.folderHistory[i], folder)) {
+        for (let i = state.folderHistoryPostRoot.length - 1; i > -1; i--) { //Adjust file path bar according to what folder you go back to
+            if (equal(state.folderHistoryPostRoot[i], folder)) {
                 state.currentFilesBeingViewed = folder.directoryContents;
                 break;
             } else {
-                state.folderHistory.pop();
+                state.folderHistoryPostRoot.pop();
             }
-        }
-
-        if (state.folderHistory.length === 1 && state.folderHistory[0].folderName === "My DCloud") {
-            //If the user clicked on the first element in the array, bring user back to root directory
-            state.currentFilesBeingViewed = state.userFiles;
         }
     }
 };
